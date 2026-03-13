@@ -15,22 +15,18 @@ function _createNode(ledger, value) {
 function createCtx(ledger, recorder) {
   return {
     get root() { return ledger.root },
-
     node(value) {
       recorder.record('node', null, null, value)
       return _createNode(ledger, value)
     },
-
     get(node, key) {
       recorder.record('get', node, key, undefined)
       return node[key]
     },
-
     set(node, key, value) {
       recorder.record('set', node, key, value)
       node[key] = value
     },
-
     delete(node, key) {
       recorder.record('delete', node, key, undefined)
       delete node[key]
@@ -70,11 +66,8 @@ function createBenchmark(costFn) {
       _recording = true
 
       let returnValue
-      try {
-        returnValue = operation(...args)
-      } finally {
-        _recording = false
-      }
+      try { returnValue = operation(...args) }
+      finally { _recording = false }
 
       const report = { ...(_counters) }
       if (debug) report.log = [..._log]
