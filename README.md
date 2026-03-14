@@ -530,7 +530,7 @@ console.log('    lookup "dog":', benchmark.run(lookup, "dog", DS.runOptions({ re
 
 <details><summary>
 
-### 6. Hash map (separate chaining)</summary>
+### 6. Hash map</summary>
 
 ```js
 // Fixed number of bucket nodes off root. Collisions handled by chaining
@@ -686,7 +686,7 @@ console.log('    getMin:   ', benchmark.run(getMin, DS.runOptions({ returnValue:
 
 <details><summary>
 
-### 8. Directed graph (adjacency list)</summary>
+### 8. Directed graph</summary>
 
 ```js
 // Nodes represent vertices. Each node has a linked list of neighbour refs.
@@ -741,7 +741,7 @@ console.log('    hasEdge A→D:      ', benchmark.run(hasEdge, "A", "D", DS.runO
 
 <details><summary>
 
-### 9. LRU cache (capacity 3)</summary>
+### 9. LRU cache</summary>
 
 ```js
 // Combines a hash map (O(1) lookup) with a doubly linked list (O(1) eviction).
